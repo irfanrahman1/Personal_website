@@ -55,9 +55,10 @@ aside{
 
 .mark{
   font-family:'Source Serif 4', serif;
-  font-size:1.5rem;
+  font-size:2.1rem;
   font-weight:600;
-  margin:0 0 2px;
+  line-height:1.15;
+  margin:0 0 6px;
   text-decoration:none;
   color:var(--ink);
   display:block;

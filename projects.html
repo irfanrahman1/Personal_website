@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Irfan Rahman</title>
+<title>Projects — Irfan Rahman</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -20,10 +20,10 @@
 
     <nav aria-label="Site navigation">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="work.html">Work</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="photography.html">Photography</a></li>
       </ul>
     </nav>
@@ -57,40 +57,46 @@
   </aside>
 
   <main>
-    <section id="hero">
-      <div class="viewfinder">
-        <span class="vf-corner vf-tl"></span>
-        <span class="vf-corner vf-tr"></span>
-        <span class="vf-corner vf-bl"></span>
-        <span class="vf-corner vf-br"></span>
-        <p class="eyebrow">Software Engineer · Builder</p>
-        <h1>I build software that's meant to be used, not just shipped.</h1>
-        <p class="status"><span class="dot" aria-hidden="true"></span>Currently an AI Software Developer Intern at Ariel Partners.</p>
-      </div>
+    <section id="projects-hero">
+      <p class="eyebrow">Projects</p>
+      <h1 class="page-title">Things I've built outside of work.</h1>
+      <p class="page-lede">Class projects, research, and side builds — spanning simulation, health tech, data science, and web apps.</p>
     </section>
 
-    <section id="teasers">
-      <div class="teaser-grid">
-        <a class="teaser" href="about.html">
-          <p class="t-label">01 · about</p>
-          <h3>Who I am</h3>
-          <p>Columbia CS '27, BMCC honors grad, and a builder who likes working close to the problem.</p>
-        </a>
-        <a class="teaser" href="work.html">
-          <p class="t-label">02 · work</p>
-          <h3>What I've built at work</h3>
-          <p>AI software at Ariel Partners, a Headstarter fellowship, and roles in nonprofit IT and campus support.</p>
-        </a>
-        <a class="teaser" href="projects.html">
-          <p class="t-label">03 · projects</p>
-          <h3>What I've built for fun</h3>
-          <p>A Unity driving simulator, a dementia-care app prototype, and a Mandelbrot set visualizer.</p>
-        </a>
-        <a class="teaser" href="photography.html">
-          <p class="t-label">04 · photography</p>
-          <h3>What I shoot</h3>
-          <p>Candid street photography around the city — a few frames from @thiscameoutnice.</p>
-        </a>
+    <section id="project-list">
+      <div class="cards">
+        <div class="card">
+          <div class="org-role">
+            <strong>Road Test Simulator</strong>
+            C#, Unity
+            <br>Spring 2024
+          </div>
+          <p>Directed a four-person team to build a Unity-based driving simulator with realistic road environments, dynamic traffic signals, and interactive signage, adopted by the professor for instructional use. Integrated AI vehicles, pedestrian logic, and a responsive UI to simulate real-world traffic — tested by 50+ students who praised its usability and training potential.</p>
+        </div>
+        <div class="card">
+          <div class="org-role">
+            <strong>DementiaGuard</strong>
+            Swift, Flutter, Firebase, Figma
+            <br>Fall 2023
+          </div>
+          <p>Researched and co-designed a cross-platform mobile app prototype built for iOS and Android to support dementia patients with medication tracking, voice reminders, and wearable integration. Created wireframes in Figma, proposed five core features, and co-presented a research poster at the BMCC STEM Showcase to 100+ attendees, receiving faculty backing for future MVP development.</p>
+        </div>
+        <div class="card">
+          <div class="org-role">
+            <strong>Mandelbrot Set Visualizer</strong>
+            Python, Matplotlib, NumPy, SciPy
+            <br>Summer 2023
+          </div>
+          <p>Developed a Python-based Mandelbrot set visualizer to explore fractal geometry, complex dynamics, and visual pattern emergence in iterative systems. Analyzed mathematical links between chaos theory and topology, presenting findings at a faculty-led research showcase.</p>
+        </div>
+        <div class="card">
+          <div class="org-role">
+            <strong>Ecosort</strong>
+            HTML, CSS, JavaScript, TensorFlow.js
+            <br>Spring 2023
+          </div>
+          <p>Built a real-time recycling classifier web app using TensorFlow.js and webcam input to identify items with roughly 85% accuracy.</p>
+        </div>
       </div>
     </section>
   </main>

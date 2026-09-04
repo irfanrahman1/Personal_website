@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Irfan Rahman</title>
+<title>About — Irfan Rahman</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -20,8 +20,8 @@
 
     <nav aria-label="Site navigation">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="work.html">Work</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="photography.html">Photography</a></li>
@@ -57,40 +57,45 @@
   </aside>
 
   <main>
-    <section id="hero">
-      <div class="viewfinder">
-        <span class="vf-corner vf-tl"></span>
-        <span class="vf-corner vf-tr"></span>
-        <span class="vf-corner vf-bl"></span>
-        <span class="vf-corner vf-br"></span>
-        <p class="eyebrow">Software Engineer · Builder</p>
-        <h1>I build software that's meant to be used, not just shipped.</h1>
-        <p class="status"><span class="dot" aria-hidden="true"></span>Currently an AI Software Developer Intern at Ariel Partners.</p>
+    <section id="about-hero">
+      <p class="eyebrow">About</p>
+      <h1 class="page-title">Computer science, close to the problem.</h1>
+    </section>
+
+    <section id="bio">
+      <div class="bio-layout">
+        <img class="bio-photo" src="images/irfan.jpg" alt="Irfan Rahman holding a camera, Manhattan skyline behind him">
+        <div class="bio-text">
+          <div class="about">
+            <p>I'm a computer science student at Columbia University, graduating in May 2027, with hands-on experience in software development, AI, and IT from internships and research work. Before Columbia, I earned an Associate Degree in Computer Science from BMCC.</p>
+            <p>I like working close to the problem — building AI projects, optimizing real websites, and digging into data science questions that don't have a clean answer yet. Outside of coursework, I take on leadership roles in student clubs and look for any excuse to join a hackathon.</p>
+          </div>
+
+          <dl class="facts">
+            <dt>Education</dt>
+            <dd>Columbia University — BA Computer Science, Class of 2027</dd>
+            <dt></dt>
+            <dd>BMCC — Associate Degree, Computer Science, 3.94 GPA, honors</dd>
+            <dt>Languages</dt>
+            <dd>Python, JavaScript, TypeScript, C++, Java, C, Swift, Dart</dd>
+            <dt>Tools</dt>
+            <dd>Git, Docker, Node.js, Firebase, Linux, Flutter, TensorFlow.js, Unity, Vercel</dd>
+          </dl>
+        </div>
       </div>
     </section>
 
-    <section id="teasers">
-      <div class="teaser-grid">
-        <a class="teaser" href="about.html">
-          <p class="t-label">01 · about</p>
-          <h3>Who I am</h3>
-          <p>Columbia CS '27, BMCC honors grad, and a builder who likes working close to the problem.</p>
-        </a>
-        <a class="teaser" href="work.html">
-          <p class="t-label">02 · work</p>
-          <h3>What I've built at work</h3>
-          <p>AI software at Ariel Partners, a Headstarter fellowship, and roles in nonprofit IT and campus support.</p>
-        </a>
-        <a class="teaser" href="projects.html">
-          <p class="t-label">03 · projects</p>
-          <h3>What I've built for fun</h3>
-          <p>A Unity driving simulator, a dementia-care app prototype, and a Mandelbrot set visualizer.</p>
-        </a>
-        <a class="teaser" href="photography.html">
-          <p class="t-label">04 · photography</p>
-          <h3>What I shoot</h3>
-          <p>Candid street photography around the city — a few frames from @thiscameoutnice.</p>
-        </a>
+    <section id="extracurriculars">
+      <h2>Extracurriculars</h2>
+      <div class="extracurr-grid">
+        <div class="ex-item">
+          <h3>Coding Club</h3>
+          <p>Coding challenges, hackathons, and collaborative projects to learn new technologies.</p>
+        </div>
+        <div class="ex-item">
+          <h3>Badminton Club</h3>
+          <p>Vice President — coordinating activities, running practices, and promoting team spirit.</p>
+        </div>
       </div>
     </section>
   </main>

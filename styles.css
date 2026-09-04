@@ -102,9 +102,6 @@ nav a.active{color:var(--accent-deep); border-color:var(--accent); font-weight:5
 
 .now-playing{
   margin-top:36px;
-  padding:14px;
-  background:var(--paper-raised);
-  border-radius:var(--radius);
 }
 .np-label{
   font-family:'IBM Plex Mono', monospace;

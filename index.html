@@ -1,194 +1,570 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Irfan Rahman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3EFE4;
+    --paper-raised:#EAE4D3;
+    --ink:#21262B;
+    --ink-soft:#4A4F53;
+    --muted:#7A7364;
+    --line:#DCD3BE;
+    --accent:#4E6E8E;      /* slate blue, nods to Columbia blue */
+    --accent-deep:#324B62;
+    --highlight:#B85C56;   /* dusty brick, used sparingly */
+    --radius:3px;
+  }
 
-<html>
-	<head>
-		<title>Irfan Rahman's website</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J9W0MHD4BP"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
 
-		gtag('config', 'G-J9W0MHD4BP');
-		</script>
-		
-	</head>
-	<body class="is-preload landing">
-		<div id="page-wrapper">
+  a{color:var(--accent-deep);}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+  }
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html">My website</a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-						</ul>
-					</nav>
-				</header>
+  .layout{
+    display:grid;
+    grid-template-columns:250px 1fr;
+    max-width:1080px;
+    margin:0 auto;
+    min-height:100vh;
+  }
 
-			<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-						<header>
-							<h2>Irfan Rahman</h2>
-							<p>She said, "We're very different versions of ourselves now." <br />
-								I guess we are, aren't we?</p>
-						</header>
-						<span class="image"><img src="images/image01.jpeg" alt="" /></span>
-					</div>
-					<a href="#one" class="goto-next scrolly">Next</a>
-				</section>
+  /* ---------- Sidebar ---------- */
+  aside{
+    position:sticky;
+    top:0;
+    align-self:start;
+    height:100vh;
+    padding:48px 28px 32px 0;
+    display:flex;
+    flex-direction:column;
+    border-right:1px solid var(--line);
+  }
 
-			<!-- One -->
-				<section id="one" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="images/image02.jpg" alt="" /></span>
-					<div class="content">
-						<div class="container">
-							<div class="row">
-								<div class="col-4 col-12-medium">
-									<header>
-										<h2>About me</h2>
-										<p>Columbia University, NY <br> Bachelor of Arts (BA), Class of 2026 </p>
-									</header>
-								</div>
-								<div class="col-8 col-12-medium">
-									<p>
-										Hi, I'm Irfan Rahman, a Computer Science major at Columbia University, 
-										expected to graduate in December 2026. I hold an Associate in Science Degree from BMCC, 
-										where I achieved a 3.94 GPA and earned several honors. 
-										I have experience as a College Assistant in BMCC's IT Department and as a Software Development/IT Intern at Art Beyond Sight. 
-										My skills include C++, Python, HTML, CSS, and JavaScript. 
-										I'm actively involved in several clubs, including the BMCC Transfer Success Club and the Badminton Club.</p>
-								</div>
+  .mark{
+    font-family:'Source Serif 4', serif;
+    font-size:1.5rem;
+    font-weight:600;
+    margin:0 0 2px;
+  }
+  .tagline{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--muted);
+    letter-spacing:0.02em;
+    margin-bottom:40px;
+  }
 
-							</div>
-						</div>
-					</div>
-					<a href="#two" class="goto-next scrolly">Next</a>
-				</section>
+  nav ul{
+    list-style:none;
+    padding:0;
+    margin:0 0 auto;
+  }
+  nav li{margin-bottom:14px;}
+  nav a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    position:relative;
+    padding-bottom:2px;
+    border-bottom:1px solid transparent;
+    transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  nav a:hover{color:var(--accent-deep); border-color:var(--accent);}
 
-			<!-- Two -->
-				<section id="two" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/image03.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Want to know more about my professional journey?</h2>
-							<p>Dive into my resume for an in-depth look at my education, projects, and skill set.</p>
-						</header>
-						<ul class="actions">
-							<li><a href="https://drive.google.com/file/d/1NCjB4ol6YVa51PX8ci4JfOsTqfZZEmun/view?usp=sharing" class="button">Click here for Resume</a></li>
-						</ul>
-					</div>
-					<a href="#three" class="goto-next scrolly">Next</a>
-				</section>
+  .side-links{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    margin-top:32px;
+  }
+  .side-links a{color:var(--ink-soft); text-decoration:none;}
+  .side-links a:hover{color:var(--accent-deep);}
+  .side-links a::before{content:"→ "; color:var(--accent);}
 
-			<!-- Three -->
-				<section id="three" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/Image04.webp" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Connect with Me on LinkedIn</h2>
-							<p>Interested in collaborating or learning more about my work? Let's connect on LinkedIn!</p>
-						</header>
-						<ul class="actions">
-							<li><a href="https://www.linkedin.com/in/irfan-rahman-897496257/" class="button">Linkedin</a></li>
-						</ul>
-					</div>
-					<a href="#four" class="goto-next scrolly">Next</a>
-				</section>
+  .now-playing{
+    margin-top:36px;
+    padding:14px;
+    background:var(--paper-raised);
+    border-radius:var(--radius);
+  }
+  .np-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    color:var(--accent-deep);
+    margin:0 0 10px;
+    letter-spacing:0.02em;
+  }
+  .np-card{
+    background:var(--ink);
+    border-radius:var(--radius);
+    padding:12px;
+  }
+  .np-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:12px;
+  }
+  .np-art{
+    flex:none;
+    width:52px; height:52px;
+    border-radius:2px;
+    background:
+      radial-gradient(circle at 25% 20%, #E8A15C 0%, transparent 50%),
+      linear-gradient(145deg, #C97A4A 0%, #8B4A32 55%, #4A2A22 100%);
+  }
+  .np-info{min-width:0;}
+  .np-track{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:0.92rem;
+    margin:0 0 3px;
+    color:var(--paper);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .np-feat{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:400;
+    font-size:0.78rem;
+    color:#B9B2A0;
+  }
+  .np-explicit{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:13px; height:13px;
+    background:#B9B2A0;
+    color:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.6rem;
+    font-weight:600;
+    border-radius:2px;
+    margin-right:6px;
+    line-height:1;
+  }
+  .np-artist{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:0.76rem;
+    color:#B9B2A0;
+    margin:0 0 2px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:flex;
+    align-items:center;
+  }
+  .np-album{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    color:#7A7364;
+    margin:0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .np-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .np-play{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--accent);
+    color:var(--paper);
+    text-decoration:none;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:0.76rem;
+    font-weight:600;
+    padding:7px 14px;
+    border-radius:16px;
+  }
+  .np-play:hover{background:var(--accent-deep);}
+  .np-link{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:#B9B2A0;
+    text-decoration:none;
+  }
+  .np-link:hover{color:var(--paper);}
 
-				<!-- Four -->
-				<section id="four" class="spotlight style4 right">
-					<span class="image fit main bottom"><img src="images/image05.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Curious about my coding approach and projects?</h2>
-							<p>Check out my GitHub to see the code I’ve written and explore my development work.</p>
-						</header>
-						<ul class="actions">
-							<li><a href="https://github.com/irfanrahman1" class="button">GitHub</a></li>
-						</ul>
-					</div>
-					<a href="#five" class="goto-next scrolly">Next</a>
-				</section>
-			<!-- Five -->
-				<section id="five" class="wrapper style1 special fade-up">
-					<div class="container">
-						<header class="major">
-							<h2>Extracurricular Activites</h2>
-							<p>Involvement in various clubs and organizations to enhance leadership and teamwork skills</p>
-						</header>
-						<div class="box alt">
-							<div class="row gtr-uniform">
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-camera"></span>
-									<h3>Photography</h3>
-									<p>Engage in photography as a hobby, capturing moments and improving my skills in visual storytelling.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-code"></span>
-									<h3>Coding Club</h3>
-									<p>Engaged in coding challenges, hackathons, and collaborative projects to improve programming skills and learn new technologies.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-tv"></span>
-									<h3>Badminton Club</h3>
-									<p>Vice President: Coordinated club activities, managed practices, and promoted physical fitness and team spirit.</p>
-								</section>
-															
-						</div>
-						<!--<footer class="major">
-							<ul class="actions special">
-								<li><a href="#" class="button">Magna sed feugiat</a></li>
-							</ul>
-						</footer> -->
-					</div>
-				</section>
+  /* ---------- Main ---------- */
+  main{padding:64px 32px 80px;}
+  section{margin-bottom:88px;}
+  section:last-of-type{margin-bottom:40px;}
 
-			<!-- Five 
-				<section id="five" class="wrapper style2 special fade">
-					<div class="container">
-						<header>
-							<h2>Magna faucibus lorem diam</h2>
-							<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
-						</header>
-						<form method="post" action="#" class="cta">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
-							</div>
-						</form>
-					</div>
-				</section> -->
+  #hero{
+    animation:heroIn 0.7s ease-out both;
+  }
+  @keyframes heroIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+  }
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/irfan-rahman-897496257/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/irfanrahman1" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li>
-					</ul>
-				</footer>
+  .viewfinder{
+    position:relative;
+    padding:28px 32px;
+    max-width:fit-content;
+  }
+  .vf-corner{
+    position:absolute;
+    width:16px; height:16px;
+    border-color:var(--accent);
+    border-style:solid;
+    border-width:0;
+  }
+  .vf-tl{top:0; left:0; border-top-width:1.5px; border-left-width:1.5px;}
+  .vf-tr{top:0; right:0; border-top-width:1.5px; border-right-width:1.5px;}
+  .vf-bl{bottom:0; left:0; border-bottom-width:1.5px; border-left-width:1.5px;}
+  .vf-br{bottom:0; right:0; border-bottom-width:1.5px; border-right-width:1.5px;}
 
-		</div>
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--accent-deep);
+    margin:0 0 14px;
+  }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  h1{
+    font-family:'Source Serif 4', serif;
+    font-weight:500;
+    font-size:3rem;
+    line-height:1.2;
+    margin:0 0 22px;
+    max-width:14ch;
+    letter-spacing:-0.01em;
+  }
+  .status{
+    font-size:1rem;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0 0 4px;
+  }
+  .status .dot{
+    display:inline-block;
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--accent);
+    margin-right:8px;
+  }
 
-	</body>
+  h2{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.5rem;
+    margin:0 0 22px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .about p{
+    max-width:62ch;
+    color:var(--ink-soft);
+    margin:0 0 16px;
+  }
+
+  dl.facts{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    column-gap:20px;
+    row-gap:10px;
+    margin-top:28px;
+    font-size:0.92rem;
+    max-width:56ch;
+  }
+  dl.facts dt{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--muted);
+    padding-top:2px;
+    white-space:nowrap;
+  }
+  dl.facts dd{margin:0; color:var(--ink-soft);}
+
+  .cards{display:flex; flex-direction:column; gap:0;}
+  .card{
+    padding:24px 20px;
+    margin:0 -20px;
+    border-bottom:1px solid var(--line);
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:24px;
+    border-radius:var(--radius);
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .card:hover{background:var(--paper-raised); transform:translateX(2px);}
+  .card:first-child{padding-top:24px;}
+  .card:last-child{border-bottom:none;}
+  .card .org-role{font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--muted); line-height:1.5;}
+  .card .org-role strong{display:block; color:var(--ink); font-weight:500; font-size:0.85rem; margin-bottom:3px;}
+  .card p{margin:0; color:var(--ink-soft); max-width:56ch;}
+
+  .extracurr-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
+  }
+  .ex-photo{grid-column:1 / -1;}
+  .film-strip{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:10px;
+    margin-top:16px;
+  }
+  .frame{
+    display:block;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    border-radius:2px;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .frame:hover{transform:translateY(-3px); box-shadow:0 8px 20px rgba(33,38,43,0.18);}
+  .frame img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .ig-handle{
+    display:inline-block;
+    margin-top:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    color:var(--accent-deep);
+    text-decoration:none;
+  }
+  .ig-handle:hover{color:var(--highlight);}
+  .ex-item{
+    padding:20px;
+    background:var(--paper-raised);
+    border-radius:var(--radius);
+  }
+  .ex-item h3{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:0.98rem;
+    font-weight:600;
+    margin:0 0 8px;
+  }
+  .ex-item p{
+    margin:0;
+    font-size:0.88rem;
+    color:var(--ink-soft);
+  }
+  .ex-item p a{color:var(--accent-deep); font-size:0.8rem;}
+
+  footer{
+    padding:32px 32px 48px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:0.85rem;
+    color:var(--muted);
+  }
+  footer a{color:var(--ink-soft); text-decoration:none; margin-left:16px;}
+  footer a:hover{color:var(--accent-deep);}
+
+  .mobile-header{display:none;}
+
+  @media (max-width:820px){
+    .layout{grid-template-columns:1fr;}
+    aside{
+      position:relative;
+      height:auto;
+      border-right:none;
+      border-bottom:1px solid var(--line);
+      padding:28px 24px;
+    }
+    nav ul{display:flex; flex-wrap:wrap; gap:4px 18px; margin-bottom:20px;}
+    nav li{margin-bottom:0;}
+    .now-playing{display:none;}
+    main{padding:40px 24px 60px;}
+    h1{font-size:2rem;}
+    .card{grid-template-columns:1fr; gap:6px;}
+    .extracurr-grid{grid-template-columns:1fr;}
+    .film-strip{grid-template-columns:repeat(3, 1fr);}
+    footer{flex-direction:column; align-items:flex-start;}
+    footer a{margin-left:0; margin-right:16px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+  <aside>
+    <div>
+      <p class="mark">Irfan Rahman</p>
+      <p class="tagline">Computer Science · Columbia&nbsp;'27</p>
+    </div>
+
+    <nav aria-label="Section navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#extracurriculars">Extracurriculars</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="side-links">
+      <a href="https://github.com/irfanrahman1" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/irfan-rahman-897496257/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://docs.google.com/document/d/1LrgVI15RFhtCKLYKaIJcK_rp11XRAM_73-4OXpRowz0/edit?usp=sharing" target="_blank" rel="noopener">Resume</a>
+    </div>
+
+    <div class="now-playing">
+      <p class="np-label">♪ on spotify</p>
+      <div class="np-card">
+        <div class="np-top">
+          <div class="np-art" aria-hidden="true"></div>
+          <div class="np-info">
+            <p class="np-track">Family Ties <span class="np-feat">(with Kendrick Lamar)</span></p>
+            <p class="np-artist"><span class="np-explicit">E</span>Baby Keem, Kendrick Lamar</p>
+            <p class="np-album">The Melodic Blue · 4:12</p>
+          </div>
+        </div>
+        <div class="np-actions">
+          <a class="np-play" href="https://open.spotify.com/search/Family%20Ties%20Baby%20Keem" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Play
+          </a>
+          <a class="np-link" href="https://open.spotify.com/search/Family%20Ties%20Baby%20Keem" target="_blank" rel="noopener">Open in Spotify ↗</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section id="hero">
+      <div class="viewfinder">
+        <span class="vf-corner vf-tl"></span>
+        <span class="vf-corner vf-tr"></span>
+        <span class="vf-corner vf-bl"></span>
+        <span class="vf-corner vf-br"></span>
+        <p class="eyebrow">Software Engineer · Builder</p>
+        <h1>I build software that's meant to be used, not just shipped.</h1>
+        <p class="status"><span class="dot" aria-hidden="true"></span>Currently an AI Software Developer Intern at Ariel Partners.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="about">
+        <p>I'm a computer science student at Columbia University, graduating in May 2027, with hands-on experience in software development, AI, and IT from internships and research work. Before Columbia, I earned an Associate Degree in Computer Science from BMCC.</p>
+        <p>I like working close to the problem — building AI projects, optimizing real websites, and digging into data science questions that don't have a clean answer yet. Outside of coursework, I take on leadership roles in student clubs and look for any excuse to join a hackathon.</p>
+      </div>
+
+      <dl class="facts">
+        <dt>Education</dt>
+        <dd>Columbia University — BA Computer Science, Class of 2027</dd>
+        <dt></dt>
+        <dd>BMCC — Associate Degree, Computer Science, 3.94 GPA, honors</dd>
+      </dl>
+    </section>
+
+    <section id="work">
+      <h2>Work</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="org-role">
+            <strong>Ariel Partners</strong>
+            AI Software Developer Intern
+          </div>
+          <p>Developing AI-driven software solutions as part of the engineering team, working across the stack to build and ship features.</p>
+        </div>
+        <div class="card">
+          <div class="org-role">
+            <strong>Headstarter</strong>
+            Software Engineering Fellow
+          </div>
+          <p>Built AI-powered projects end to end as part of a fellowship focused on shipping real software quickly, from idea to working product.</p>
+        </div>
+        <div class="card">
+          <div class="org-role">
+            <strong>Art Beyond Sight</strong>
+            Software Development / IT Intern
+          </div>
+          <p>Worked on website optimization and IT support, improving performance and usability for a nonprofit focused on accessibility in the arts.</p>
+        </div>
+        <div class="card">
+          <div class="org-role">
+            <strong>BMCC</strong>
+            Data Science Research Intern
+          </div>
+          <p>Explored data science concepts through research work, applying analytical methods to real datasets and questions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="extracurriculars">
+      <h2>Extracurriculars</h2>
+      <div class="extracurr-grid">
+        <div class="ex-item ex-photo">
+          <h3>Street Photography</h3>
+          <p>Shooting candid, everyday moments around the city — a hobby that's sharpened my eye for visual storytelling.</p>
+          <div class="film-strip">
+            <a href="https://www.instagram.com/thiscameoutnice" target="_blank" rel="noopener" class="frame">
+              <img src="images/street-01.jpg" alt="Street photo — cockpit and monitor at night" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/thiscameoutnice" target="_blank" rel="noopener" class="frame">
+              <img src="images/street-02.jpg" alt="Manhattan skyline over Central Park" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/thiscameoutnice" target="_blank" rel="noopener" class="frame">
+              <img src="images/street-03.jpg" alt="Mechanical sculpture, gallery installation" loading="lazy">
+            </a>
+          </div>
+          <a class="ig-handle" href="https://www.instagram.com/thiscameoutnice" target="_blank" rel="noopener">@thiscameoutnice ↗</a>
+        </div>
+        <div class="ex-item">
+          <h3>Coding Club</h3>
+          <p>Coding challenges, hackathons, and collaborative projects to learn new technologies.</p>
+        </div>
+        <div class="ex-item">
+          <h3>Badminton Club</h3>
+          <p>Vice President — coordinating activities, running practices, and promoting team spirit.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer id="contact">
+  <span>© Irfan Rahman</span>
+  <div>
+    <a href="https://github.com/irfanrahman1" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/irfan-rahman-897496257/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://docs.google.com/document/d/1LrgVI15RFhtCKLYKaIJcK_rp11XRAM_73-4OXpRowz0/edit?usp=sharing" target="_blank" rel="noopener">Resume</a>
+  </div>
+</footer>
+
+</body>
 </html>

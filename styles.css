@@ -435,7 +435,6 @@ footer a:hover{color:var(--accent-deep);}
   }
   nav ul{display:flex; flex-wrap:wrap; gap:4px 18px; margin-bottom:20px;}
   nav li{margin-bottom:0;}
-  .now-playing{display:none;}
   main{padding:40px 24px 60px;}
   h1{font-size:2rem;}
   .page-title{font-size:1.8rem;}
